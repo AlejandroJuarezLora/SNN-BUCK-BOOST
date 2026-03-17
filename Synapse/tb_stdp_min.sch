@@ -6,15 +6,15 @@ S {}
 F {}
 E {}
 B 2 650 -180 1450 220 {flags=graph
-y1=-53000000
-y2=1.7e+08
+y1=97000
+y2=3700000
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.0637503e-05
-x2=4.6851903e-05
+x1=-1.8495684e-06
+x2=3.8150432e-05
 divx=5
 subdivx=1
 
@@ -27,15 +27,15 @@ color=4
 node="\\"Memristance [Ohms]; xstdp1.be xstdp1.te - i(v.xstdp1.vmr) / \\""
 linewidth_mult=4}
 B 2 640 720 1440 1120 {flags=graph
-y1=-1.2
-y2=1.2
+y1=-1.6594338
+y2=1.2205662
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.0637503e-05
-x2=4.6851903e-05
+x1=-1.8495684e-06
+x2=3.8150432e-05
 divx=5
 subdivx=1
 
@@ -55,8 +55,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.0637503e-05
-x2=4.6851903e-05
+x1=-1.8495685e-06
+x2=3.8150432e-05
 divx=5
 subdivx=1
 
@@ -76,8 +76,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.0637503e-05
-x2=4.6851903e-05
+x1=-1.8495684e-06
+x2=3.8150432e-05
 divx=5
 subdivx=1
 
@@ -90,15 +90,15 @@ linewidth_mult=4
 color=6
 node=i(v.xstdp1.vmr)}
 B 2 660 -600 1460 -200 {flags=graph
-y1=-1.3e-06
-y2=1.2e-05
+y1=3.8e-12
+y2=1.6e-06
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.0637503e-05
-x2=4.6851903e-05
+x1=-1.8495685e-06
+x2=3.8150432e-05
 divx=5
 subdivx=1
 
@@ -108,9 +108,8 @@ unitx=1
 logx=0
 logy=0
 linewidth_mult=4
-color="8 6"
-node="i(v_iext)
-i(v_isyn)"}
+color=8
+node=i(v_iext)}
 B 2 650 230 1450 630 {flags=graph
 y1=0
 y2=1.8
@@ -119,8 +118,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.0637503e-05
-x2=4.6851903e-05
+x1=-1.8495685e-06
+x2=3.8150432e-05
 divx=5
 subdivx=1
 
@@ -158,8 +157,8 @@ C {vsource.sym} -100 -50 0 1 {name=V3 value=1.8 savecurrent=false}
 C {vdd.sym} -100 -80 0 0 {name=l3 lab=VDD}
 C {gnd.sym} -100 -20 0 0 {name=l4 lab=GND}
 C {stdp_min.sym} 150 60 0 0 {name=xstdp1}
-C {devices/vsource.sym} 410 140 0 0 {name=V1 value="PULSE(0 1.8 0 5n 5n 500n 1000n 50)"}
-C {devices/vsource.sym} -110 130 0 0 {name=V2 value="PULSE(0 1.8 50u 5n 5n 500n 1000n 50)"}
+C {devices/vsource.sym} 410 140 0 0 {name=V1 value="PULSE(0 1.8 0 5n 5n 500n 1000n 20)"}
+C {devices/vsource.sym} -110 130 0 0 {name=V2 value="PULSE(0 1.8 20u 5n 5n 500n 1000n 20)"}
 C {devices/code_shown.sym} 270 230 0 1 {name=NGSPICE
 only_toplevel=true
 value="
@@ -179,7 +178,7 @@ N1 TE BE rram_v0_model
 .control
   pre_osdi /foss/designs/SNN-BUCK-BOOST/Memristor/rram_v0.osdi
   save all
-  tran 50n 100u
+  tran 50n 40u
   write tb_stdp_min.raw
 
 .endc
